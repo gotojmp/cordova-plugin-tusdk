@@ -52,34 +52,25 @@
         <header-file src="src/ios/CDVTusdk.h" />
         <source-file src="src/ios/CDVTusdk.m" />
 
+<!--
         <resource-file src="lib/ios/yw_1222.jpg" />
         <resource-file src="lib/ios/AlipaySDK.bundle" />
         <resource-file src="lib/ios/baichuan.bundle" />
 
-<!--
         <framework src="lib/ios/ALBBFullSecurityGuard.framework" custom="true" weak="true" />
         <framework src="lib/ios/WXOUIModule.framework" custom="true" weak="true" />
         <framework src="lib/ios/WXOpenIMSDKFMWK.framework" custom="true" weak="true" />
         <framework src="lib/ios/YWExtensionForCustomerServiceFMWK.framework" custom="true" weak="true" />
--->
 
-        <framework src="libstdc++.6.dylib" />
-        <framework src="libz.dylib" />
-        <framework src="CoreGraphics.framework" />
-        <framework src="CoreTelephony.framework" />
-        <framework src="SystemConfiguration.framework" />
-        <framework src="Security.framework" />
-        <framework src="MobileCoreServices.framework" />
-        <framework src="AssetsLibrary.framework" />
-        <framework src="ImageIO.framework" />
-        <framework src="CoreData.framework" />
-        <framework src="CoreLocation.framework" />
-        <framework src="CFNetwork.framework" />
-        <framework src="UIKit.framework" />
-        <framework src="Foundation.framework" />
+        <framework src="lib/ios/GPUImage.framework" custom="true" weak="true" />
+        <framework src="lib/ios/TuSDK.framework" custom="true" weak="true" />
+        <framework src="lib/ios/TuSDKGeeV1.framework" custom="true" weak="true" />
+        <framework src="Photos.framework" />
+-->
     </platform>
 
     <!-- android -->
+    <!--
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Tusdk">
@@ -93,6 +84,7 @@
 
         <source-file src="src/android/Tusdk.java" target-dir="src/com/gotojmp/cordova/tusdk" />
     </platform>
+    -->
 
 </plugin>
 
