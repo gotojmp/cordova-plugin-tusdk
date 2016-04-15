@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-tusdk"
+        version="0.0.1">
+    <name>Tusdk</name>
+    <description>Cordova TuSdk Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,tusdk</keywords>
+    <repo>https://github.com/gotojmp/cordova-plugin-tusdk.git</repo>
+    <issue>https://github.com/gotojmp/cordova-plugin-tusdk/issues</issue>
+
+    <preference name="TUSDKAPPKEY_IOS" />
+    <preference name="TUSDKAPPKEY_ANDROID" />
+
+    <engines>
+        <engine name="cordova" version=">=3.1.0" />
+    </engines>
+
+    <js-module src="www/tusdk.js" name="tusdk">
+        <clobbers target="window.Tusdk" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Tusdk">
+                <param name="ios-package" value="CDVTusdk" />
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="TUSDKAPPKEY_IOS" value="$TUSDKAPPKEY_IOS" />
+        </config-file>
+
+        <header-file src="src/ios/CDVTusdk.h" />
+        <source-file src="src/ios/CDVTusdk.m" />
+
+        <resource-file src="lib/ios/yw_1222.jpg" />
+        <resource-file src="lib/ios/AlipaySDK.bundle" />
+        <resource-file src="lib/ios/baichuan.bundle" />
+
+<!--
+        <framework src="lib/ios/ALBBFullSecurityGuard.framework" custom="true" weak="true" />
+        <framework src="lib/ios/WXOUIModule.framework" custom="true" weak="true" />
+        <framework src="lib/ios/WXOpenIMSDKFMWK.framework" custom="true" weak="true" />
+        <framework src="lib/ios/YWExtensionForCustomerServiceFMWK.framework" custom="true" weak="true" />
+-->
+
+        <framework src="libstdc++.6.dylib" />
+        <framework src="libz.dylib" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Security.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="ImageIO.framework" />
+        <framework src="CoreData.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="CFNetwork.framework" />
+        <framework src="UIKit.framework" />
+        <framework src="Foundation.framework" />
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Tusdk">
+                <param name="android-package" value="com.gotojmp.cordova.tusdk.Tusdk"/>
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="TUSDKAPPKEY_ANDROID" value="$TUSDKAPPKEY_ANDROID" />
+        </config-file>
+
+        <framework src="lib/android" custom="true" />
+
+        <source-file src="src/android/Tusdk.java" target-dir="src/com/gotojmp/cordova/tusdk" />
+    </platform>
+
+</plugin>
+
