@@ -28,6 +28,11 @@ module.exports = {
         okCb = okCb || _okCb;
         errCb = errCb || _errCb;
         exec(okCb, errCb, "Tusdk", "openPhotoBox", []);
+    },
+    openAvatarBox: function (okCb, errCb) {
+        okCb = okCb || _okCb;
+        errCb = errCb || _errCb;
+        exec(okCb, errCb, "Tusdk", "openAvatarBox", []);
     }
 };
 

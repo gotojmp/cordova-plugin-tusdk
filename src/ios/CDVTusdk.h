@@ -22,5 +22,6 @@
 
 @interface CDVTusdk : CDVPlugin
 
+@property (nonatomic, copy) NSString* currentCallbackId;
 
 @end
