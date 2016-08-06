@@ -23,5 +23,8 @@
 @interface CDVTusdk : CDVPlugin
 
 @property (nonatomic, copy) NSString* currentCallbackId;
+@property (nonatomic) NSInteger cutReturnType;
+
+- (void)openPhotoBoxNative:(UIViewController *)controller withAppKey:(NSString *)appKey;
 
 @end
